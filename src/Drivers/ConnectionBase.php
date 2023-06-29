@@ -106,6 +106,8 @@ abstract class ConnectionBase implements ConnectionInterface
             return $value->value();
         } elseif (is_int($value)) {
             return (int) $value;
+        } elseif (is_float($value)) {
+            return (float) $value;
         } elseif (is_array($value)) {
             // Supports MVA attributes
             return '('.implode(',', $this->quoteArr($value)).')';
